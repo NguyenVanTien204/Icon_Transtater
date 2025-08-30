@@ -8,7 +8,7 @@ Gõ vào một câu → app sẽ thay các từ bằng emoji tương ứng (nế
 ---
 
 ## 🚀 Demo  
-👉 Truy cập: [Emoji Translator on GitHub Pages](https://your-username.github.io/emoji-translator/)  
+👉 Truy cập: [Emoji Translator on GitHub Pages](https://NguyenVanTien204.github.io/Icon_Transtater/)  
 
 ---
 
