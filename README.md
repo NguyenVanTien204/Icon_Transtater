@@ -21,8 +21,7 @@ Gõ vào một câu → app sẽ thay các từ bằng emoji tương ứng (nế
 ---
 
 ## 🛠️ Công nghệ sử dụng  
-- **HTML5**, **CSS3**, **JavaScript (Vanilla)**  
-- Có thể mở rộng bằng React / Vue nếu muốn nâng cấp.  
+- **HTML5**, **CSS3**, **JavaScript (Vanilla)**   
 - Deploy bằng **GitHub Pages**.  
 
 ---
