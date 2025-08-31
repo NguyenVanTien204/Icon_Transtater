@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-31",
+  "autoDiscovery": true,
+  "dictionaries": [
+    {
+      "filename": "emotions.json",
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "filename": "food.json",
+      "enabled": true,
+      "priority": 2
+    },
+    {
+      "filename": "animals.json",
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "filename": "nature.json",
+      "enabled": true,
+      "priority": 4
+    },
+    {
+      "filename": "technology.json",
+      "enabled": true,
+      "priority": 5
+    },
+    {
+      "filename": "sports.json",
+      "enabled": true,
+      "priority": 6
+    },
+    {
+      "filename": "transportation.json",
+      "enabled": true,
+      "priority": 7
+    },
+    {
+      "filename": "symbols.json",
+      "enabled": true,
+      "priority": 8
+    },
+    {
+      "filename": "colors.json",
+      "enabled": true,
+      "priority": 9
+    },
+    {
+      "filename": "numbers.json",
+      "enabled": true,
+      "priority": 10
+    }
+  ],
+  "fallback": {
+    "enabled": true,
+    "basicWords": {
+      "yêu": "❤️", "love": "❤️",
+      "vui": "😊", "happy": "😊",
+      "pizza": "🍕", "coffee": "☕",
+      "mèo": "🐱", "cat": "🐱",
+      "mặt trời": "☀️", "sun": "☀️"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "colors",
+  "name": "Màu sắc",
+  "description": "Các màu sắc và sắc thái khác nhau",
+  "icon": "🌈",
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-31",
+  "priority": 9,
+  "words": {
+    "đỏ": "🔴", "red": "🔴",
+    "xanh": "🔵", "blue": "🔵",
+    "vàng": "🟡", "yellow": "🟡",
+    "xanh lá": "🟢", "green": "🟢",
+    "tím": "🟣", "purple": "🟣",
+    "cam": "🟠", "orange": "🟠",
+    "đen": "⚫", "black": "⚫",
+    "trắng": "⚪", "white": "⚪",
+    "nâu": "🟤", "brown": "🟤",
+    "hồng": "🩷", "pink": "🩷",
+    "xám": "🩶", "gray": "🩶", "grey": "🩶",
+    "bạc": "🩶", "silver": "🩶",
+    "vàng kim": "🟨", "gold": "🟨",
+    "màu sắc": "🌈", "color": "🌈",
+    "cầu vồng": "🌈", "rainbow": "🌈"
+  }
+}

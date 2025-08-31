@@ -1,0 +1,30 @@
+{
+  "id": "emotions",
+  "name": "Cảm xúc và trạng thái",
+  "description": "Các từ và emoji liên quan đến cảm xúc, tâm trạng và trạng thái tinh thần",
+  "icon": "😊",
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-31",
+  "priority": 1,
+  "words": {
+    "yêu": "❤️", "love": "❤️", "tình yêu": "❤️",
+    "vui": "😊", "happy": "😊", "hạnh phúc": "😊", "vui vẻ": "😊",
+    "buồn": "😢", "sad": "😢", "khóc": "😭",
+    "cười": "😂", "laugh": "😂", "haha": "😂",
+    "tức": "😠", "angry": "😠", "giận": "😠", "tức giận": "😠",
+    "ngạc nhiên": "😱", "surprise": "😱", "bất ngờ": "😱",
+    "sợ": "😨", "fear": "😨", "sợ hãi": "😨",
+    "mệt": "😴", "tired": "😴", "ngủ": "😴", "mệt mỏi": "😴",
+    "tuyệt vời": "🤩", "awesome": "🤩", "tuyệt": "🤩",
+    "ok": "👌", "được": "👌", "tốt": "👍", "good": "👍",
+    "thích": "😍", "like": "😍",
+    "ghét": "😤", "hate": "😤",
+    "bình thường": "😐", "normal": "😐",
+    "hào hứng": "🤗", "excited": "🤗",
+    "lo lắng": "😟", "worried": "😟",
+    "căng thẳng": "😰", "stressed": "😰",
+    "thư giãn": "😌", "relaxed": "😌",
+    "bối rối": "😕", "confused": "😕",
+    "tự tin": "😎", "confident": "😎"
+  }
+}
