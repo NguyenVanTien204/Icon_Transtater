@@ -4,163 +4,20 @@ let loadedDictionaries = {};
 let dictionaryConfig = null;
 let isLoading = false;
 
-// ===== EMBEDDED DICTIONARY (for file:// protocol) =====
-const EMBEDDED_DICTIONARY = {
-  emotions: {
-    "yêu": "❤️", "love": "❤️", "tình yêu": "❤️",
-    "vui": "😊", "happy": "😊", "hạnh phúc": "😊", "vui vẻ": "😊",
-    "buồn": "😢", "sad": "😢", "khóc": "😭",
-    "cười": "😂", "laugh": "😂", "haha": "😂",
-    "tức": "😠", "angry": "😠", "giận": "😠", "tức giận": "😠",
-    "ngạc nhiên": "😱", "surprise": "😱", "bất ngờ": "😱",
-    "sợ": "😨", "fear": "😨", "sợ hãi": "😨",
-    "mệt": "😴", "tired": "😴", "ngủ": "😴", "mệt mỏi": "😴",
-    "tuyệt vời": "🤩", "awesome": "🤩", "tuyệt": "🤩",
-    "ok": "👌", "được": "👌", "tốt": "👍", "good": "👍",
-    "thích": "😍", "like": "😍",
-    "ghét": "😤", "hate": "😤"
-  },
-  food: {
-    "pizza": "🍕", "bánh pizza": "🍕",
-    "cà phê": "☕", "coffee": "☕", "cafe": "☕",
-    "trà": "🍵", "tea": "🍵",
-    "bánh mì": "🥖", "bread": "🥖",
-    "hamburger": "🍔", "burger": "🍔",
-    "khoai tây": "🍟", "fries": "🍟",
-    "kem": "🍦", "ice cream": "🍦",
-    "bánh ngọt": "🍰", "cake": "🍰", "bánh": "🍰",
-    "táo": "🍎", "apple": "🍎",
-    "chuối": "🍌", "banana": "🍌",
-    "cam": "🍊", "orange": "🍊",
-    "nho": "🍇", "grape": "🍇",
-    "dưa hấu": "🍉", "watermelon": "🍉",
-    "cơm": "🍚", "rice": "🍚",
-    "mì": "🍜", "noodle": "🍜", "phở": "🍜",
-    "sushi": "🍣",
-    "chocolate": "🍫", "socola": "🍫",
-    "bia": "🍺", "beer": "🍺",
-    "rượu": "🍷", "wine": "🍷",
-    "nước": "💧", "water": "💧"
-  },
-  animals: {
-    "mèo": "🐱", "cat": "🐱",
-    "chó": "🐶", "dog": "🐶",
-    "gấu": "🐻", "bear": "🐻",
-    "hổ": "🐯", "tiger": "🐯",
-    "sư tử": "🦁", "lion": "🦁",
-    "voi": "🐘", "elephant": "🐘",
-    "khỉ": "🐵", "monkey": "🐵",
-    "gà": "🐔", "chicken": "🐔",
-    "cá": "🐟", "fish": "🐟",
-    "chim": "🐦", "bird": "🐦",
-    "bướm": "🦋", "butterfly": "🦋",
-    "ong": "🐝", "bee": "🐝",
-    "rắn": "🐍", "snake": "🐍",
-    "chuột": "🐭", "mouse": "🐭",
-    "thỏ": "🐰", "rabbit": "🐰",
-    "ngựa": "🐴", "horse": "🐴",
-    "bò": "🐮", "cow": "🐮",
-    "heo": "🐷", "pig": "🐷"
-  },
-  nature: {
-    "mặt trời": "☀️", "sun": "☀️", "nắng": "☀️",
-    "mưa": "🌧️", "rain": "🌧️",
-    "tuyết": "❄️", "snow": "❄️",
-    "mây": "☁️", "cloud": "☁️",
-    "gió": "💨", "wind": "💨",
-    "sấm sét": "⚡", "lightning": "⚡",
-    "cầu vồng": "🌈", "rainbow": "🌈",
-    "hoa": "🌸", "flower": "🌸",
-    "cây": "🌳", "tree": "🌳",
-    "lá": "🍃", "leaf": "🍃",
-    "núi": "⛰️", "mountain": "⛰️",
-    "biển": "🌊", "sea": "🌊", "ocean": "🌊",
-    "sao": "⭐", "star": "⭐",
-    "mặt trăng": "🌙", "moon": "🌙",
-    "lửa": "🔥", "fire": "🔥"
-  },
-  transportation: {
-    "xe ô tô": "🚗", "car": "🚗", "ô tô": "🚗",
-    "xe máy": "🏍️", "motorcycle": "🏍️",
-    "xe đạp": "🚲", "bicycle": "🚲", "bike": "🚲",
-    "máy bay": "✈️", "airplane": "✈️", "plane": "✈️",
-    "tàu hỏa": "🚆", "train": "🚆",
-    "tàu thủy": "🚢", "ship": "🚢",
-    "xe buýt": "🚌", "bus": "🚌",
-    "taxi": "🚕"
-  },
-  technology: {
-    "điện thoại": "📱", "phone": "📱", "mobile": "📱",
-    "máy tính": "💻", "computer": "💻", "laptop": "💻",
-    "camera": "📷", "máy ảnh": "📷",
-    "ti vi": "📺", "tv": "📺", "television": "📺",
-    "radio": "📻",
-    "đồng hồ": "⌚", "watch": "⌚",
-    "sách": "📚", "book": "📚",
-    "bút": "✏️", "pen": "✏️", "pencil": "✏️",
-    "email": "📧", "mail": "📧",
-    "internet": "🌐", "web": "🌐",
-    "game": "🎮", "games": "🎮",
-    "âm nhạc": "🎵", "music": "🎵", "nhạc": "🎵"
-  },
-  symbols: {
-    "tim": "❤️", "heart": "❤️",
-    "ngôi sao": "⭐", "star": "⭐",
-    "tick": "✅", "check": "✅", "đúng": "✅",
-    "sai": "❌", "wrong": "❌", "no": "❌",
-    "cảnh báo": "⚠️", "warning": "⚠️",
-    "thông tin": "ℹ️", "info": "ℹ️",
-    "câu hỏi": "❓", "question": "❓",
-    "cảm thán": "❗", "exclamation": "❗",
-    "tăng": "⬆️", "up": "⬆️", "lên": "⬆️",
-    "giảm": "⬇️", "down": "⬇️", "xuống": "⬇️",
-    "trái": "⬅️", "left": "⬅️",
-    "phải": "➡️", "right": "➡️"
-  }
-};
-
-// ===== PROTOCOL DETECTION =====
-function isFileProtocol() {
-  return window.location.protocol === 'file:';
-}
-
-function isLocalhost() {
-  return window.location.hostname === 'localhost' || 
-         window.location.hostname === '127.0.0.1' ||
-         window.location.hostname === '';
-}
-
-// ===== DICTIONARY AUTO-DISCOVERY & LOADING =====
+// ===== MAIN LOADING FUNCTION =====
 async function loadEmojiDictionary() {
   if (isLoading) {
-    debugLog('⏳ Dictionary loading đã đang chạy, bỏ qua...');
     return;
   }
 
   try {
     isLoading = true;
-    debugLog('🚀 Bắt đầu tải hệ thống từ điển...');
-    showDebugPanel(); // Show debug panel when loading starts
-    showLoadingState('Đang khám phá và tải từ điển...');
-
-    // Try to load a single test file first
-    debugLog('🧪 Test: Thử tải file emotions.json...');
-    const testResponse = await fetch('./assets/dictionary/emotions.json');
-    debugLog(`🧪 Test response status: ${testResponse.status}`);
-
-    if (!testResponse.ok) {
-      throw new Error(`Cannot load test file: ${testResponse.status}`);
-    }
-
-    const testData = await testResponse.json();
-    debugLog(`🧪 Test data loaded: ${testData.name} with ${Object.keys(testData.words).length} words`);
+    showLoadingState('Đang tải từ điển...');
 
     // Load config first
-    debugLog('📋 Bước 1: Tải config...');
     await loadDictionaryConfig();
 
     // Auto-discover or use config list
-    debugLog('🔍 Bước 2: Khám phá file...');
     const dictionaryFiles = await discoverDictionaryFiles();
 
     if (dictionaryFiles.length === 0) {
@@ -168,11 +25,9 @@ async function loadEmojiDictionary() {
     }
 
     // Load all dictionary files
-    debugLog('📚 Bước 3: Tải file...');
     await loadAllDictionaries(dictionaryFiles);
 
     // Merge all dictionaries
-    debugLog('🔄 Bước 4: Gộp từ điển...');
     mergeDictionaries();
 
     const totalWords = Object.keys(emojiDictionary).length;
@@ -182,35 +37,14 @@ async function loadEmojiDictionary() {
       throw new Error('Không có từ nào được tải');
     }
 
-    debugLog(`✅ Hoàn thành! ${totalDictionaries} từ điển với ${totalWords} từ`);
     showToast(`Đã tải ${totalDictionaries} từ điển với ${totalWords}+ từ thành công!`, 'success');
 
     // Update UI with dictionary info
     updateDictionaryInfo();
 
   } catch (error) {
-    debugLog('❌ Lỗi khi tải từ điển emoji: ' + error.message);
-    console.error('❌ Lỗi chi tiết:', error);
-
-    // Try simple method first
-    debugLog('🔧 Thử phương pháp tải đơn giản...');
-    try {
-      const simpleDict = await loadSingleFileTest();
-      if (simpleDict) {
-        emojiDictionary = simpleDict;
-        debugLog(`✅ Tải đơn giản thành công: ${Object.keys(emojiDictionary).length} từ`);
-        showToast(`Đã tải từ điển với ${Object.keys(emojiDictionary).length} từ!`, 'success');
-        updateDictionaryInfo();
-        return;
-      }
-    } catch (simpleError) {
-      debugLog('❌ Phương pháp đơn giản cũng thất bại: ' + simpleError.message);
-    }
-
-    showToast('Không thể tải từ điển emoji. Sử dụng từ điển dự phòng!', 'warning');
-
-    // Final fallback to basic dictionary
-    loadFallbackDictionary();
+    console.error('Lỗi khi tải từ điển emoji:', error);
+    showToast('Không thể tải từ điển emoji!', 'error');
   } finally {
     isLoading = false;
     hideLoadingState();
@@ -222,13 +56,10 @@ async function loadDictionaryConfig() {
     const response = await fetch('./assets/dictionary/config.json');
     if (response.ok) {
       dictionaryConfig = await response.json();
-      debugLog('📋 Đã tải config từ điển');
     } else {
-      debugLog(`⚠️ Config không tải được (${response.status}), sử dụng auto-discovery`);
       dictionaryConfig = { autoDiscovery: true, dictionaries: [] };
     }
   } catch (error) {
-    debugLog('⚠️ Không thể tải config: ' + error.message);
     dictionaryConfig = { autoDiscovery: true, dictionaries: [] };
   }
 }
@@ -236,7 +67,6 @@ async function loadDictionaryConfig() {
 async function discoverDictionaryFiles() {
   // If config exists and auto-discovery is disabled, use config list
   if (dictionaryConfig && !dictionaryConfig.autoDiscovery && dictionaryConfig.dictionaries) {
-    debugLog('📋 Sử dụng danh sách từ config');
     return dictionaryConfig.dictionaries
       .filter(dict => dict.enabled)
       .sort((a, b) => a.priority - b.priority)
@@ -244,7 +74,6 @@ async function discoverDictionaryFiles() {
   }
 
   // Auto-discovery: Try common dictionary files
-  debugLog('🔍 Bắt đầu auto-discovery...');
   const commonFiles = [
     'emotions.json',
     'food.json',
@@ -262,48 +91,25 @@ async function discoverDictionaryFiles() {
 
   for (const filename of commonFiles) {
     try {
-      debugLog(`🔍 Đang kiểm tra: ${filename}`);
       const response = await fetch(`./assets/dictionary/${filename}`);
       if (response.ok) {
         existingFiles.push(filename);
-        debugLog(`✅ Tìm thấy: ${filename}`);
-      } else {
-        debugLog(`❌ Không tìm thấy: ${filename} (${response.status})`);
       }
     } catch (error) {
-      debugLog(`❌ Lỗi khi tải ${filename}: ${error.message}`);
+      // File không tồn tại, bỏ qua
     }
   }
 
-  debugLog(`📁 Tổng cộng tìm thấy ${existingFiles.length} file: ${existingFiles.join(', ')}`);
   return existingFiles;
 }
 
 async function loadAllDictionaries(filenames) {
-  console.log(`📚 Bắt đầu tải ${filenames.length} từ điển:`, filenames);
-
   if (filenames.length === 0) {
-    console.warn('⚠️ Không có file từ điển nào để tải');
     return;
   }
 
   const loadPromises = filenames.map(filename => loadSingleDictionary(filename));
-  const results = await Promise.allSettled(loadPromises);
-
-  let successCount = 0;
-  let errorCount = 0;
-
-  results.forEach((result, index) => {
-    if (result.status === 'fulfilled') {
-      successCount++;
-      console.log(`✅ Thành công: ${filenames[index]}`);
-    } else {
-      errorCount++;
-      console.error(`❌ Lỗi tải ${filenames[index]}:`, result.reason);
-    }
-  });
-
-  console.log(`📊 Kết quả tải: ${successCount} thành công, ${errorCount} lỗi`);
+  await Promise.allSettled(loadPromises);
 }
 
 async function loadSingleDictionary(filename) {
@@ -321,20 +127,14 @@ async function loadSingleDictionary(filename) {
     }
 
     loadedDictionaries[dictionary.id] = dictionary;
-    console.log(`📚 Đã tải ${dictionary.name}: ${Object.keys(dictionary.words).length} từ`);
-
     return dictionary;
   } catch (error) {
-    console.error(`❌ Lỗi tải ${filename}:`, error);
     throw error;
   }
 }
 
 function mergeDictionaries() {
-  console.log(`🔄 Bắt đầu gộp ${Object.keys(loadedDictionaries).length} từ điển...`);
-
   if (Object.keys(loadedDictionaries).length === 0) {
-    console.warn('⚠️ Không có từ điển nào để gộp');
     return;
   }
 
@@ -344,66 +144,13 @@ function mergeDictionaries() {
   const sortedDictionaries = Object.values(loadedDictionaries)
     .sort((a, b) => (a.priority || 999) - (b.priority || 999));
 
-  console.log('📋 Thứ tự ưu tiên:', sortedDictionaries.map(d => `${d.name} (${d.priority || 'no priority'})`));
-
   // Merge all dictionaries (later ones override earlier ones for same keys)
   sortedDictionaries.forEach(dictionary => {
-    const wordCount = Object.keys(dictionary.words).length;
     Object.assign(emojiDictionary, dictionary.words);
-    console.log(`➕ Đã thêm ${wordCount} từ từ "${dictionary.name}"`);
   });
-
-  const totalWords = Object.keys(emojiDictionary).length;
-  console.log(`✅ Hoàn thành gộp: ${totalWords} từ tổng cộng`);
-}function loadFallbackDictionary() {
-  debugLog('🔄 Sử dụng từ điển dự phòng...');
-
-  // Use fallback from config if available
-  if (dictionaryConfig?.fallback?.basicWords) {
-    emojiDictionary = { ...dictionaryConfig.fallback.basicWords };
-    debugLog(`📚 Dùng fallback từ config: ${Object.keys(emojiDictionary).length} từ`);
-  } else {
-    // Hard-coded fallback
-    emojiDictionary = {
-      'yêu': '❤️', 'love': '❤️',
-      'vui': '😊', 'happy': '😊',
-      'buồn': '😢', 'sad': '😢',
-      'pizza': '🍕', 'cà phê': '☕', 'coffee': '☕',
-      'mèo': '🐱', 'cat': '🐱',
-      'chó': '🐶', 'dog': '🐶',
-      'mặt trời': '☀️', 'sun': '☀️',
-      'mưa': '🌧️', 'rain': '🌧️'
-    };
-    debugLog(`📚 Dùng fallback hard-coded: ${Object.keys(emojiDictionary).length} từ`);
-  }
-
-  // Update UI
-  updateDictionaryInfo();
-  showToast(`Đã tải từ điển dự phòng với ${Object.keys(emojiDictionary).length} từ cơ bản!`, 'success');
-}// ===== DEBUG FUNCTIONS =====
-function debugLog(message) {
-  console.log(message);
-  const debugContent = document.getElementById('debugContent');
-  if (debugContent) {
-    debugContent.textContent += new Date().toLocaleTimeString() + ': ' + message + '\n';
-    debugContent.scrollTop = debugContent.scrollHeight;
-  }
 }
 
-function toggleDebug() {
-  const debugPanel = document.getElementById('debugPanel');
-  if (debugPanel) {
-    debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
-  }
-}
-
-function showDebugPanel() {
-  const debugPanel = document.getElementById('debugPanel');
-  if (debugPanel) {
-    debugPanel.style.display = 'block';
-  }
-}
-
+// ===== UI FUNCTIONS =====
 // ===== DOM ELEMENTS =====
 const elements = {
   textInput: document.getElementById('textInput'),
@@ -669,34 +416,7 @@ async function addDictionary(filename) {
   }
 }
 
-// ===== SIMPLE FALLBACK LOADER =====
-async function loadSingleFileTest() {
-  const filesToTry = [
-    'emotions.json',
-    'food.json',
-    'animals.json'
-  ];
-
-  for (const filename of filesToTry) {
-    try {
-      debugLog(`🧪 Thử tải: ${filename}`);
-      const response = await fetch(`./assets/dictionary/${filename}`);
-
-      if (response.ok) {
-        const data = await response.json();
-        debugLog(`✅ Thành công tải ${filename}: ${Object.keys(data.words).length} từ`);
-        return data.words;
-      } else {
-        debugLog(`❌ Lỗi ${filename}: ${response.status}`);
-      }
-    } catch (error) {
-      debugLog(`❌ Exception ${filename}: ${error.message}`);
-    }
-  }
-
-  debugLog('❌ Không tải được file nào, dùng từ điển cứng');
-  return null;
-}function handleCopy() {
+function handleCopy() {
   const resultText = elements.outputContent.textContent;
 
   if (!resultText || resultText.includes('placeholder-text')) {
