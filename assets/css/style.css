@@ -638,30 +638,3 @@ textarea:focus-visible {
   border: 0;
 }
 
-/* ===== DEBUG PANEL ===== */
-.debug-panel {
-  background: var(--bg-card);
-  border: 2px solid var(--warning-color);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  margin-bottom: var(--space-lg);
-  box-shadow: var(--shadow-md);
-}
-
-.debug-panel h3 {
-  margin-bottom: var(--space-md);
-  color: var(--warning-color);
-}
-
-.debug-content {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: var(--space-md);
-  max-height: 200px;
-  overflow-y: auto;
-  font-family: 'Courier New', monospace;
-  font-size: var(--font-size-sm);
-  line-height: 1.4;
-  white-space: pre-wrap;
-}
