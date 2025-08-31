@@ -245,31 +245,27 @@ function autoResizeTextarea() {
 function translateText(text) {
   if (!text.trim()) return '';
 
-  // Split text into words while preserving punctuation and spacing
-  const words = text.split(/(\s+|[.,!?;:])/);
+  let result = text;
 
-  return words.map(word => {
-    const cleanWord = word.toLowerCase().trim();
+  // Get all dictionary keys sorted by length (longest first)
+  // This ensures longer phrases like "con mèo" are matched before "mèo"
+  const sortedKeys = Object.keys(emojiDictionary)
+    .sort((a, b) => b.length - a.length);
 
-    // Skip empty strings and pure whitespace/punctuation
-    if (!cleanWord || /^[\s.,!?;:]+$/.test(word)) {
-      return word;
-    }
+  // Replace each key with its emoji, case-insensitive
+  sortedKeys.forEach(key => {
+    const emoji = emojiDictionary[key];
 
-    // Check for exact matches first
-    if (emojiDictionary[cleanWord]) {
-      return emojiDictionary[cleanWord];
-    }
+    // Create a regex that matches the key as a whole word or phrase
+    // Use word boundaries for single words, but allow phrase matching
+    const regex = key.includes(' ')
+      ? new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+      : new RegExp(`\\b${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
 
-    // Check for partial matches (useful for compound words)
-    for (const [key, emoji] of Object.entries(emojiDictionary)) {
-      if (cleanWord.includes(key) && key.length > 2) {
-        return word.replace(new RegExp(key, 'gi'), emoji);
-      }
-    }
+    result = result.replace(regex, emoji);
+  });
 
-    return word;
-  }).join('');
+  return result;
 }
 
 function handleTranslate() {
