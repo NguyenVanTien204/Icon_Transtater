@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-08-31",
+    "totalEmojis": 200,
+    "description": "Từ điển emoji cho Emoji Translator - hỗ trợ tiếng Việt và tiếng Anh"
+  },
+  "categories": {
+    "emotions": {
+      "name": "Cảm xúc và trạng thái",
+      "icon": "😊",
+      "words": {
+        "yêu": "❤️", "love": "❤️", "tình yêu": "❤️",
+        "vui": "😊", "happy": "😊", "hạnh phúc": "😊", "vui vẻ": "😊",
+        "buồn": "😢", "sad": "😢", "khóc": "😭",
+        "cười": "😂", "laugh": "😂", "haha": "😂",
+        "tức": "😠", "angry": "😠", "giận": "😠", "tức giận": "😠",
+        "ngạc nhiên": "😱", "surprise": "😱", "bất ngờ": "😱",
+        "sợ": "😨", "fear": "😨", "sợ hãi": "😨",
+        "mệt": "😴", "tired": "😴", "ngủ": "😴", "mệt mỏi": "😴",
+        "tuyệt vời": "🤩", "awesome": "🤩", "tuyệt": "🤩",
+        "ok": "👌", "được": "👌", "tốt": "👍", "good": "👍"
+      }
+    },
+    "food": {
+      "name": "Thức ăn và đồ uống",
+      "icon": "🍕",
+      "words": {
+        "pizza": "🍕", "bánh pizza": "🍕",
+        "cà phê": "☕", "coffee": "☕", "cafe": "☕",
+        "trà": "🍵", "tea": "🍵",
+        "bánh mì": "🥖", "bread": "🥖",
+        "hamburger": "🍔", "burger": "🍔",
+        "khoai tây": "🍟", "fries": "🍟",
+        "kem": "🍦", "ice cream": "🍦",
+        "bánh ngọt": "🍰", "cake": "🍰", "bánh": "🍰",
+        "táo": "🍎", "apple": "🍎",
+        "chuối": "🍌", "banana": "🍌",
+        "cam": "🍊", "orange": "🍊",
+        "nho": "🍇", "grape": "🍇",
+        "dưa hấu": "🍉", "watermelon": "🍉",
+        "cơm": "🍚", "rice": "🍚",
+        "mì": "🍜", "noodle": "🍜", "phở": "🍜",
+        "sushi": "🍣",
+        "bánh donut": "🍩", "donut": "🍩",
+        "chocolate": "🍫", "socola": "🍫",
+        "kẹo": "🍬", "candy": "🍬",
+        "bia": "🍺", "beer": "🍺",
+        "rượu": "🍷", "wine": "🍷",
+        "nước": "💧", "water": "💧"
+      }
+    },
+    "animals": {
+      "name": "Động vật",
+      "icon": "🐱",
+      "words": {
+        "mèo": "🐱", "cat": "🐱",
+        "chó": "🐶", "dog": "🐶",
+        "gấu": "🐻", "bear": "🐻",
+        "hổ": "🐯", "tiger": "🐯",
+        "sư tử": "🦁", "lion": "🦁",
+        "voi": "🐘", "elephant": "🐘",
+        "khỉ": "🐵", "monkey": "🐵",
+        "gà": "🐔", "chicken": "🐔",
+        "cá": "🐟", "fish": "🐟",
+        "chim": "🐦", "bird": "🐦",
+        "bướm": "🦋", "butterfly": "🦋",
+        "ong": "🐝", "bee": "🐝",
+        "rắn": "🐍", "snake": "🐍",
+        "chuột": "🐭", "mouse": "🐭",
+        "thỏ": "🐰", "rabbit": "🐰",
+        "ngựa": "🐴", "horse": "🐴",
+        "bò": "🐮", "cow": "🐮",
+        "heo": "🐷", "pig": "🐷",
+        "cừu": "🐑", "sheep": "🐑",
+
+        "cá heo": "🐬", "dolphin": "🐬",
+        "cá voi": "🐋", "whale": "🐋",
+        "cua": "🦀", "crab": "🦀",
+        "tôm": "🦐", "shrimp": "🦐",
+        "bạch tuộc": "🐙", "octopus": "🐙",
+        "sứa": "🪼", "jellyfish": "🪼",
+
+        "ếch": "🐸", "frog": "🐸",
+        "cá sấu": "🐊", "crocodile": "🐊",
+        "rùa": "🐢", "turtle": "🐢",
+        "thằn lằn": "🦎", "lizard": "🦎",
+
+        "cú mèo": "🦉", "owl": "🦉",
+        "chim cánh cụt": "🐧", "penguin": "🐧",
+        "chim hồng hạc": "🦩", "flamingo": "🦩",
+        "chim công": "🦚", "peacock": "🦚",
+        "chim bồ câu": "🕊️", "dove": "🕊️",
+
+        "ong nghệ": "🐝", "bumblebee": "🐝",
+        "bọ rùa": "🐞", "ladybug": "🐞",
+        "dế": "🦗", "cricket": "🦗",
+        "bọ cánh cứng": "🪲", "beetle": "🪲",
+        "nhện": "🕷️", "spider": "🕷️",
+        "bọ cạp": "🦂", "scorpion": "🦂",
+
+        "nai": "🦌", "deer": "🦌",
+        "chuột túi": "🦘", "kangaroo": "🦘",
+        "gấu trúc": "🐼", "panda": "🐼",
+        "koala": "🐨", "gấu koala": "🐨",
+        "cáo": "🦊", "fox": "🦊",
+        "sói": "🐺", "wolf": "🐺",
+        "hà mã": "🦛", "hippo": "🦛",
+        "tê giác": "🦏", "rhino": "🦏",
+        "ngựa vằn": "🦓", "zebra": "🦓",
+        "lạc đà": "🐪", "camel": "🐪",
+        "llama": "🦙", "lạc đà không bướu": "🦙"
+      }
+    },
+    "nature": {
+      "name": "Thiên nhiên và thời tiết",
+      "icon": "🌸",
+      "words": {
+        "mặt trời": "☀️", "sun": "☀️", "nắng": "☀️",
+        "mưa": "🌧️", "rain": "🌧️",
+        "tuyết": "❄️", "snow": "❄️",
+        "mây": "☁️", "cloud": "☁️",
+        "gió": "💨", "wind": "💨",
+        "sấm sét": "⚡", "lightning": "⚡",
+        "cầu vồng": "🌈", "rainbow": "🌈",
+        "hoa": "🌸", "flower": "🌸",
+        "cây": "🌳", "tree": "🌳",
+        "lá": "🍃", "leaf": "🍃",
+        "núi": "⛰️", "mountain": "⛰️",
+        "biển": "🌊", "sea": "🌊", "ocean": "🌊",
+        "sao": "⭐", "star": "⭐",
+        "mặt trăng": "🌙", "moon": "🌙",
+        "lửa": "🔥", "fire": "🔥"
+      }
+    },
+    "transportation": {
+      "name": "Phương tiện giao thông",
+      "icon": "🚗",
+      "words": {
+        "xe ô tô": "🚗", "car": "🚗", "ô tô": "🚗",
+        "xe máy": "🏍️", "motorcycle": "🏍️",
+        "xe đạp": "🚲", "bicycle": "🚲", "bike": "🚲",
+        "máy bay": "✈️", "airplane": "✈️", "plane": "✈️",
+        "tàu hỏa": "🚆", "train": "🚆",
+        "tàu thủy": "🚢", "ship": "🚢",
+        "xe buýt": "🚌", "bus": "🚌",
+        "taxi": "🚕",
+        "tàu điện ngầm": "🚇", "subway": "🚇"
+      }
+    },
+    "technology": {
+      "name": "Công nghệ và vật dụng",
+      "icon": "📱",
+      "words": {
+        "điện thoại": "📱", "phone": "📱", "mobile": "📱",
+        "máy tính": "💻", "computer": "💻", "laptop": "💻",
+        "camera": "📷", "máy ảnh": "📷",
+        "ti vi": "📺", "tv": "📺", "television": "📺",
+        "radio": "📻",
+        "đồng hồ": "⌚", "watch": "⌚", "clock": "🕐",
+        "sách": "📚", "book": "📚",
+        "bút": "✏️", "pen": "✏️", "pencil": "✏️",
+        "giấy": "📄", "paper": "📄",
+        "email": "📧", "mail": "📧",
+        "internet": "🌐", "web": "🌐",
+        "game": "🎮", "games": "🎮",
+        "âm nhạc": "🎵", "music": "🎵", "nhạc": "🎵"
+      }
+    },
+    "sports": {
+      "name": "Thể thao và hoạt động",
+      "icon": "⚽",
+      "words": {
+        "bóng đá": "⚽", "football": "⚽", "soccer": "⚽",
+        "bóng rổ": "🏀", "basketball": "🏀",
+        "tennis": "🎾",
+        "golf": "⛳",
+        "bơi lội": "🏊", "swimming": "🏊",
+        "chạy": "🏃", "running": "🏃",
+        "gym": "🏋️", "workout": "🏋️",
+        "yoga": "🧘"
+      }
+    },
+    "colors": {
+      "name": "Màu sắc",
+      "icon": "🌈",
+      "words": {
+        "đỏ": "🔴", "red": "🔴",
+        "xanh": "🔵", "blue": "🔵",
+        "vàng": "🟡", "yellow": "🟡",
+        "xanh lá": "🟢", "green": "🟢",
+        "tím": "🟣", "purple": "🟣",
+        "cam": "🟠", "orange": "🟠",
+        "đen": "⚫", "black": "⚫",
+        "trắng": "⚪", "white": "⚪"
+      }
+    },
+    "numbers": {
+      "name": "Số và ký hiệu",
+      "icon": "1️⃣",
+      "words": {
+        "1": "1️⃣", "2": "2️⃣", "3": "3️⃣", "4": "4️⃣", "5": "5️⃣",
+        "6": "6️⃣", "7": "7️⃣", "8": "8️⃣", "9": "9️⃣", "0": "0️⃣",
+        "một": "1️⃣", "hai": "2️⃣", "ba": "3️⃣", "bốn": "4️⃣", "năm": "5️⃣",
+        "sáu": "6️⃣", "bảy": "7️⃣", "tám": "8️⃣", "chín": "9️⃣", "không": "0️⃣"
+      }
+    },
+    "symbols": {
+      "name": "Biểu tượng phổ biến",
+      "icon": "❤️",
+      "words": {
+        "tim": "❤️", "heart": "❤️",
+        "ngôi sao": "⭐", "star": "⭐",
+        "tick": "✅", "check": "✅", "đúng": "✅",
+        "sai": "❌", "wrong": "❌", "no": "❌",
+        "cảnh báo": "⚠️", "warning": "⚠️",
+        "thông tin": "ℹ️", "info": "ℹ️",
+        "câu hỏi": "❓", "question": "❓",
+        "cảm thán": "❗", "exclamation": "❗",
+        "tăng": "⬆️", "up": "⬆️", "lên": "⬆️",
+        "giảm": "⬇️", "down": "⬇️", "xuống": "⬇️",
+        "trái": "⬅️", "left": "⬅️",
+        "phải": "➡️", "right": "➡️"
+      }
+    },
+    "time": {
+      "name": "Thời gian",
+      "icon": "🕐",
+      "words": {
+        "ngày": "📅", "day": "📅", "date": "📅",
+        "giờ": "🕐", "time": "🕐", "hour": "🕐",
+        "sáng": "🌅", "morning": "🌅",
+        "trưa": "☀️", "noon": "☀️",
+        "chiều": "🌇", "afternoon": "🌇", "evening": "🌇",
+        "tối": "🌃", "night": "🌃"
+      }
+    },
+    "activities": {
+      "name": "Hoạt động hàng ngày",
+      "icon": "🍽️",
+      "words": {
+        "ăn": "🍽️", "eat": "🍽️", "eating": "🍽️",
+        "uống": "🥤", "drink": "🥤", "drinking": "🥤",
+        "ngủ": "😴", "sleep": "😴", "sleeping": "😴",
+        "làm việc": "💼", "work": "💼", "working": "💼",
+        "học": "📚", "study": "📚", "studying": "📚",
+        "chơi": "🎮", "play": "🎮", "playing": "🎮",
+        "nấu ăn": "👨‍🍳", "cooking": "👨‍🍳", "cook": "👨‍🍳",
+        "mua sắm": "🛒", "shopping": "🛒", "shop": "🛒",
+        "đi chơi": "🎡", "hang out": "🎡",
+        "xem phim": "🎬", "movie": "🎬", "watching": "🎬"
+      }
+    },
+    "places": {
+      "name": "Địa điểm",
+      "icon": "🏠",
+      "words": {
+        "nhà": "🏠", "home": "🏠", "house": "🏠",
+        "trường": "🏫", "school": "🏫",
+        "công ty": "🏢", "office": "🏢", "company": "🏢",
+        "bệnh viện": "🏥", "hospital": "🏥",
+        "ngân hàng": "🏦", "bank": "🏦",
+        "siêu thị": "🏪", "supermarket": "🏪", "store": "🏪",
+        "nhà hàng": "🍽️", "restaurant": "🍽️",
+        "quán cà phê": "☕", "coffee shop": "☕",
+        "công viên": "🏞️", "park": "🏞️",
+        "bãi biển": "🏖️", "beach": "🏖️"
+      }
+    },
+    "social": {
+      "name": "Lời chào và cảm xúc xã hội",
+      "icon": "👋",
+      "words": {
+        "xin chào": "👋", "hello": "👋", "hi": "👋", "chào": "👋",
+        "tạm biệt": "👋", "goodbye": "👋", "bye": "👋",
+        "cảm ơn": "🙏", "thank you": "🙏", "thanks": "🙏",
+        "xin lỗi": "🙏", "sorry": "🙏",
+        "sinh nhật": "🎂", "birthday": "🎂",
+        "chúc mừng": "🎉", "congratulations": "🎉", "congrats": "🎉",
+        "party": "🎉", "tiệc": "🎉",
+        "quà": "🎁", "gift": "🎁", "present": "🎁"
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 Emoji Translator</title>
+    <meta name="description" content="Dịch văn bản thành emoji ngay lập tức - Ứng dụng web vui nhộn và thú vị">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="emoji">🌐</span>
+                    Emoji Translator
+                </h1>
+                <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <p class="subtitle">Dịch văn bản thành emoji ngay lập tức</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Debug Panel (temporary) -->
+            <div class="debug-panel" id="debugPanel" style="display: none;">
+                <h3>🔍 Debug Log</h3>
+                <div class="debug-content" id="debugContent"></div>
+                <button onclick="toggleDebug()" style="margin-top: 10px;">Hide Debug</button>
+            </div>
+
+            <div class="translator-card">
+                <div class="input-section">
+                    <label for="textInput" class="input-label">
+                        <span class="label-text">Nhập văn bản của bạn</span>
+                        <span class="label-emoji">✍️</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <textarea
+                            id="textInput"
+                            class="text-input"
+                            placeholder="Ví dụ: Tôi yêu pizza và cà phê..."
+                            rows="4"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="input-actions">
+                            <button class="clear-btn" id="clearBtn" title="Xóa tất cả">
+                                <span>🗑️</span>
+                            </button>
+                            <span class="char-count" id="charCount">0/500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="translate-section">
+                    <button class="translate-btn" id="translateBtn">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Dịch sang Emoji</span>
+                    </button>
+                </div>
+
+                <div class="output-section">
+                    <label class="output-label">
+                        <span class="label-text">Kết quả dịch</span>
+                        <span class="label-emoji">🎨</span>
+                    </label>
+                    <div class="output-wrapper">
+                        <div class="output-content" id="outputContent">
+                            <p class="placeholder-text">Kết quả sẽ hiển thị ở đây...</p>
+                        </div>
+                        <div class="output-actions">
+                            <button class="copy-btn" id="copyBtn" disabled title="Sao chép kết quả">
+                                <span class="copy-icon">📋</span>
+                                <span class="copy-text">Sao chép</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features">
+                <h2 class="features-title">✨ Tính năng nổi bật</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Dịch nhanh chóng</h3>
+                        <p>Chuyển đổi văn bản thành emoji ngay lập tức</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Từ điển phong phú</h3>
+                        <p>Hỗ trợ hàng trăm từ và cụm từ phổ biến</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive</h3>
+                        <p>Hoạt động mượt mà trên mọi thiết bị</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌓</div>
+                        <h3>Dark/Light Mode</h3>
+                        <p>Giao diện thích ứng theo sở thích</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2025 Emoji Translator. Made with ❤️ by
+                    <a href="https://github.com/NguyenVanTien204" target="_blank" rel="noopener noreferrer">NguyenVanTien204</a>
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/NguyenVanTien204/Icon_Transtater" target="_blank" rel="noopener noreferrer">
+                        <span>📁</span> GitHub
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message">Đã sao chép vào clipboard!</span>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
