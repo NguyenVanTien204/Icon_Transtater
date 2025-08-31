@@ -151,6 +151,22 @@ function mergeDictionaries() {
 }
 
 // ===== UI FUNCTIONS =====
+// ===== DEBUG FUNCTIONS =====
+window.debugDictionary = function() {
+  console.log('📚 Dictionary Status:');
+  console.log('- Total words:', Object.keys(emojiDictionary).length);
+  console.log('- Sample entries:', Object.entries(emojiDictionary).slice(0, 10));
+  console.log('- Multi-word entries:', Object.keys(emojiDictionary).filter(k => k.includes(' ')));
+  return emojiDictionary;
+};
+
+window.testTranslate = function(text) {
+  console.log('🧪 Testing translation:', text);
+  const result = translateText(text);
+  console.log('✅ Result:', result);
+  return result;
+};
+
 // ===== DOM ELEMENTS =====
 const elements = {
   textInput: document.getElementById('textInput'),
@@ -245,30 +261,67 @@ function autoResizeTextarea() {
 function translateText(text) {
   if (!text.trim()) return '';
 
-  let result = text;
+  console.log('🔍 Translating:', text);
+  console.log('📚 Dictionary keys count:', Object.keys(emojiDictionary).length);
+
+  let result = text.toLowerCase(); // Work with lowercase for easier matching
+  let originalText = text; // Keep original for case preservation
 
   // Get all dictionary keys sorted by length (longest first)
-  // This ensures longer phrases like "con mèo" are matched before "mèo"
   const sortedKeys = Object.keys(emojiDictionary)
     .sort((a, b) => b.length - a.length);
 
-  // Replace each key with its emoji, case-insensitive
+  console.log('🔤 Sample keys (first 10):', sortedKeys.slice(0, 10));
+
+  // Keep track of replacements to preserve original case
+  const replacements = [];
+
+  // Find all matches first
   sortedKeys.forEach(key => {
     const emoji = emojiDictionary[key];
+    const lowerKey = key.toLowerCase();
 
-    // Create a regex that matches the key as a whole word or phrase
-    // Use word boundaries for single words, but allow phrase matching
-    const regex = key.includes(' ')
-      ? new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
-      : new RegExp(`\\b${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    // Find all occurrences of this key
+    let index = 0;
+    while ((index = result.indexOf(lowerKey, index)) !== -1) {
+      // Check if it's a whole word/phrase match
+      const beforeChar = index > 0 ? result[index - 1] : ' ';
+      const afterChar = index + lowerKey.length < result.length ? result[index + lowerKey.length] : ' ';
 
-    result = result.replace(regex, emoji);
+      // For phrases (containing spaces), match exactly
+      // For single words, check word boundaries
+      const isValidMatch = key.includes(' ') ||
+        (!/[a-zA-ZÀ-ỹ]/.test(beforeChar) && !/[a-zA-ZÀ-ỹ]/.test(afterChar));
+
+      if (isValidMatch) {
+        replacements.push({
+          start: index,
+          end: index + lowerKey.length,
+          emoji: emoji,
+          key: key
+        });
+        console.log(`✅ Found match for "${key}" at position ${index}`);
+      }
+
+      index += lowerKey.length;
+    }
   });
 
-  return result;
-}
+  // Sort replacements by start position (descending) to avoid index shifting
+  replacements.sort((a, b) => b.start - a.start);
 
-function handleTranslate() {
+  // Apply replacements to original text
+  let finalResult = originalText;
+  replacements.forEach(replacement => {
+    const before = finalResult.substring(0, replacement.start);
+    const after = finalResult.substring(replacement.end);
+    finalResult = before + replacement.emoji + after;
+    console.log(`🔄 Replaced "${replacement.key}" with "${replacement.emoji}"`);
+  });
+
+  console.log('🎯 Final result:', finalResult);
+  return finalResult;
+}function handleTranslate() {
   const inputText = elements.textInput.value.trim();
 
   if (!inputText) {
