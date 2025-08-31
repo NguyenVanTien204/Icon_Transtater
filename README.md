@@ -3,7 +3,7 @@
 Một web app nhỏ vui vẻ cho phép bạn **dịch văn bản thành emoji** ngay lập tức.
 Gõ vào một câu → app sẽ thay các từ bằng emoji tương ứng (nếu có), tạo ra bản dịch thú vị và dễ thương.
 
-![demo](./demo.gif) <!-- thay bằng ảnh GIF hoặc screenshot sau khi bạn có demo -->
+![demo](./demo.gif)
 
 ---
 
@@ -25,6 +25,15 @@ Gõ vào một câu → app sẽ thay các từ bằng emoji tương ứng (nế
 - Deploy bằng **GitHub Pages**.
 
 ---
+
+## Từ điển & đóng góp
+
+[Từ điển](Dictionary.md) – 📚
+
+Bạn có thể đóng góp cho dự án này bằng cách:
+
+- Gửi pull request với các thay đổi của bạn.
+- Báo cáo lỗi hoặc yêu cầu tính năng mới trên trang Issues của repo.
 
 ## 📦 Cài đặt và chạy local
 
